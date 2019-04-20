@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -32,7 +32,7 @@ namespace Storage
             {
                 Name = textBox1.Text,
                 Address = textBox2.Text,
-                Capacity = Convert.ToDouble(textBox3.Text),
+                Capacity = Convert.ToInt32(textBox3.Text),
                 Items = listBox1.Items.OfType<Items>().ToList(),
                 Workers = listBox2.Items.OfType<Workers>().ToList(),
             };
