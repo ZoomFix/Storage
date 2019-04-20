@@ -13,19 +13,19 @@ namespace Storage
         /// </summary>
         public string Name { get; set; }
         /// <summary>
-        /// Дата постройки
+        /// Вместимость
         /// </summary>
-        public double Capacity { get; set; }
+        public int Capacity { get; set; }
         /// <summary>
-        /// Техническое обсуживание
+        /// Адрес
         /// </summary>
         public string Address { get; set; }
         /// <summary>
-        /// Тип корабля
+        /// Тип склада
         /// </summary>
         public StorageType StorageType { get; set; }
         /// <summary>
-        /// Бортовой журнал
+        /// Складской журнал
         /// </summary>
         public List<Items> Items { get; set; }
         /// <summary>
@@ -55,9 +55,6 @@ namespace Storage
         }
     }
 
-    /// <summary>
-    /// Полёт
-    /// </summary>
     public class Items
     {
         /// <summary>
@@ -83,11 +80,11 @@ namespace Storage
         }
     }
 
-    /// <summary>
-    /// Тип коробля
-    /// </summary>
     public enum StorageType
     {
+        /// <summary>
+        /// Классификация складов
+        /// </summary>
         Aplus,
         A,
         Bplus,
@@ -95,7 +92,4 @@ namespace Storage
         C,
         D
     }
-
-   
-    
 }
