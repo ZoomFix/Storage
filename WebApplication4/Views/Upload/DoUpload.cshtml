@@ -1,0 +1,53 @@
+﻿@model Storage.StorageModel
+
+@{
+    ViewBag.Title = "Склад " + Model.Name;
+    Layout = "_Layout";
+}
+
+<h2>Склад @Model.Name</h2>
+
+@Model.StorageType
+@Model.Address
+@Model.Capacity
+
+<table class="table table-bordered table-responsive table-hover">
+    <thead>
+        <tr>
+            <td>Название</td>
+            <td>Цена</td>
+            <td>Количество</td>
+            <td>Производитель</td>
+        </tr>
+    </thead>
+    @if (Model.Items != null)
+    {
+        foreach (var item in Model.Items)
+        {
+            <tr>
+                <td>@item.Name</td>
+                <td>@item.Price</td>
+                <td>@item.Units</td>
+                <td>@item.Manufacturer</td>
+            </tr>
+        }
+    }
+</table>
+
+<table class="table table-bordered table-responsive table-hover">
+    <thead>
+        <tr>
+            <td>Имя</td>
+            <td>Должность</td>
+            <td>Стаж</td>
+        </tr>
+    </thead>
+    @foreach (var worker in Model.Workers)
+    {
+        <tr>
+            <td>@worker.Name</td>
+            <td>@worker.Position</td>
+            <td>@worker.Experience</td>
+        </tr>
+    }
+</table>

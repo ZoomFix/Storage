@@ -202,5 +202,10 @@ namespace Storage
                 listBox2.Items.Remove(listBox2.SelectedItem);
             }
         }
+
+        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
+        }
     }
 }

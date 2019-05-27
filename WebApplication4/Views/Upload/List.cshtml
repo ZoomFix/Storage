@@ -1,0 +1,65 @@
+﻿@model System.Collections.Generic.List<WebApplication.Models.DataAccessPostgreSqlProvider.DbStorage>
+@{
+    ViewBag.Title = "Склады";
+    Layout = "_Layout";
+}
+<h2>@ViewBag.Title</h2>
+@foreach (var storage in Model)
+{
+<div>
+    Название:
+    @storage.Name
+    Адрес:
+    @storage.Address
+    Вместимость:
+    @storage.Capacity
+    Тип:
+    @storage.StorageType
+    <a href="Print?id=@storage.Id">Напечатать в Excel</a>
+    <table class="table table-bordered table-responsive table-hover">
+        <thead>
+            <tr>
+                <td>Название</td>
+                <td>Цена</td>
+                <td>Количество</td>
+                <td>Производитель</td>
+            </tr>
+        </thead>
+        @if (storage.Items != null)
+        {
+            foreach (var item in storage.Items)
+            {
+                <tr>
+                    <td>@item.Name</td>
+                    <td>@item.Price</td>
+                    <td>@item.Units</td>
+                    <td>@item.Manufacturer</td>
+                </tr>
+            }
+        }
+    </table>
+
+    <table class="table table-bordered table-responsive table-hover">
+        <thead>
+            <tr>
+                <td>Имя</td>
+                <td>Должность</td>
+                <td>Стаж</td>
+            </tr>
+        </thead>
+        @if (storage.Workers != null)
+        {
+            foreach (var worker in storage.Workers)
+            {
+                <tr>
+                    <td>@worker.Name</td>
+                    <td>@worker.Position</td>
+                    <td>@worker.Experience</td>
+                </tr>
+            }
+        }
+    </table>
+</div>
+}
+
+

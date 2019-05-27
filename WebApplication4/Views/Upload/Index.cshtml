@@ -1,0 +1,17 @@
+﻿
+@{
+    ViewBag.Title = "Загрузка склада";
+    Layout = "_Layout";
+}
+<h2>Загрузите файл .storage</h2>
+@using (Html.BeginForm("DoUpload",
+   "Upload",
+   FormMethod.Post,
+   new { enctype = "multipart/form-data" }))
+{
+    <label for="file">Выберите файл:</label>
+    <input type="file" name="file" id="file" /><br><br>
+    <input type="submit" value="Отправить" />
+    <br><br>
+    @ViewBag.Message
+}
