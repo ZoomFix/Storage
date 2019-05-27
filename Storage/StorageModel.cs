@@ -48,7 +48,6 @@ namespace Storage
         /// Стаж
         /// </summary>
         public int Experience { get; set; }
-
         public override string ToString()
         {
             return $"Имя: {Name}, Должность: {Position}, Стаж: {Experience}";
