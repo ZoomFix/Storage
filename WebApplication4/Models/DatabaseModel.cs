@@ -25,7 +25,7 @@ namespace WebApplication.Models
             }
 
             public DbSet<DbStorage> StorageFacilities { get; set; }
-            //public DbSet<DbFlight> Flights { get; set; }
+            
             public static string ConnectionString { get; set; }
 
             protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
